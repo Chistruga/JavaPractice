@@ -1,4 +1,6 @@
-abstract class FiguresWithSides {
+package Utils;
+
+public abstract class FiguresWithSides {
     public abstract void showFigureName();
 
     public abstract void calculateFigureArea();

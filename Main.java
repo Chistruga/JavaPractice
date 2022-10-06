@@ -1,8 +1,19 @@
+import JavaExercisesTask.*;
+import OOPTask.Circle;
+import OOPTask.Rectangle;
+import OOPTask.Square;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        CheckPalindrome checkPalindrome = new CheckPalindrome();
+        BubbleSort bubbleSort = new BubbleSort();
+        MagicalSquare magicalSquare = new MagicalSquare();
+        ReverseArrayOfFloats reverseArrayOfFloats = new ReverseArrayOfFloats();
+        SumOfOddAndEvenNumbers sumOfOddAndEvenNumbers = new SumOfOddAndEvenNumbers();
+
+                Scanner scanner = new Scanner(System.in);
 
         System.out.println("1. Check if a string of characters is a Palindrome\n" +
                 "2. Inverse the elements of an array\n" +
@@ -14,16 +25,17 @@ public class Main {
         System.out.println("Choose one of the above displayed options by number: ");
         int number = scanner.nextInt();
 
+
         switch (number) {
-            case 1: CheckPalindrome.checkIfAStringIsPalindrome();
+            case 1: checkPalindrome.checkIfAStringIsPalindrome();
                 break;
-            case 2: ReverseArrayOfFloats.reverseAnArray();
+            case 2: reverseArrayOfFloats.reverseAnArray();
                 break;
-            case 3: BubbleSort.sortElementsInArrayBubbleSort();
+            case 3: bubbleSort.sortElementsInArrayBubbleSort();
                 break;
-            case 4: SumOfOddAndEvenNumbers.findSumOfOddElementsAndTotalNumberOfEvenElements();
+            case 4: sumOfOddAndEvenNumbers.findSumOfOddElementsAndTotalNumberOfEvenElements();
                 break;
-            case 5: MagicalSquare.readMatrixFromConsoleAndSeeIfItIsMagic();
+            case 5: magicalSquare.readMatrixFromConsoleAndSeeIfItIsMagic();
                 break;
             case 6: Circle circle = new Circle();
                 circle.displayFigureName();

@@ -1,5 +1,9 @@
-public class Circle implements FiguresWithoutSides{
-    private String name = "Circle";
+package OOPTask;
+
+import Utils.FiguresWithoutSides;
+
+public class Circle implements FiguresWithoutSides {
+    private String name = "OOPTask.Circle";
     private double radius = 5;
     final double PI = 3.14;
 
@@ -27,12 +31,12 @@ public class Circle implements FiguresWithoutSides{
     @Override
     public void calculateFigureArea() {
         double area = PI * radius * radius;
-        System.out.println("Circle Area is " + area);
+        System.out.println("OOPTask.Circle Area is " + area);
     }
 
     @Override
     public void calculateFigurePerimeter() {
         double perimeter = 2 * PI * radius;
-        System.out.println("Circle Perimeter is " + perimeter);
+        System.out.println("OOPTask.Circle Perimeter is " + perimeter);
     }
 }

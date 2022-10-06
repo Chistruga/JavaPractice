@@ -1,27 +1,19 @@
+package JavaExercisesTask;
+
 import java.util.Scanner;
 
 public class CheckPalindrome {
-    private static String givenString;
-    private static String reversedString = "";
+    private String givenString;
 
-    public static void checkIfAStringIsPalindrome(){
+    public void checkIfAStringIsPalindrome() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a string to check if it is a Palindrome or not: ");
         givenString = sc.nextLine();
 
-        for(int i = (givenString.length()-1); i>=0; --i){
-            reversedString += givenString.charAt(i);
-        }
-
-        if (reversedString.equals(givenString))
-        {
+        if (givenString.equals(new StringBuilder(givenString).reverse().toString())) {
             System.out.println("Entered string is a Palindrome");
-        }
-        else
-        {
+        } else {
             System.out.println("Given String is not a Palindrome");
         }
-
     }
-
 }

@@ -1,10 +1,14 @@
-public class Rectangle extends FiguresWithSides{
-    private String name = "Rectangle";
+package OOPTask;
+
+import Utils.FiguresWithSides;
+
+public class Rectangle extends FiguresWithSides {
+    private String name = "OOPTask.Rectangle";
     private int length;
     private int width;
     final int NUMBER_OF_SIDES = 4;
 
-    public Rectangle(int length, int width){
+    public Rectangle(int length, int width) {
         this.length = length;
         this.width = width;
     }
@@ -45,17 +49,17 @@ public class Rectangle extends FiguresWithSides{
     @Override
     public void calculateFigureArea() {
         int area = length * width;
-        System.out.println("Rectangle Area is " + area);
+        System.out.println("OOPTask.Rectangle Area is " + area);
     }
 
     @Override
     public void calculateFigurePerimeter() {
         int perimeter = (2 * length) + (2 * width);
-        System.out.println("Rectangle Perimeter is " + perimeter);
+        System.out.println("OOPTask.Rectangle Perimeter is " + perimeter);
     }
 
     @Override
     public void displaySideNumbers() {
-        System.out.println("Rectangle has " + getNUMBER_OF_SIDES() + " sides");
+        System.out.println("OOPTask.Rectangle has " + getNUMBER_OF_SIDES() + " sides");
     }
 }
