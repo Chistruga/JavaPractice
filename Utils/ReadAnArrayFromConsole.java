@@ -9,7 +9,7 @@ public class ReadAnArrayFromConsole {
         return numberOfElementsInArray;
     }
 
-    public int[] readIntArrayFromConsole() {
+    public int[] readAndPrintIntArrayFromConsole() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Give the number of elements in the array: ");
         numberOfElementsInArray = scanner.nextInt();
@@ -20,13 +20,11 @@ public class ReadAnArrayFromConsole {
             initialArray[i] = scanner.nextInt();
         }
         System.out.println("Your initial array is: ");
-        for (int k : initialArray) {
-            System.out.print(k + "\t");
-        }
+        PrintArrayElements.printIntArray(initialArray);
         return initialArray;
     }
 
-    public double[] readDoubleArrayFromConsole() {
+    public double[] readAndPrintDoubleArrayFromConsole() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Give the number of elements in the array: ");
         numberOfElementsInArray = scanner.nextInt();
@@ -34,13 +32,10 @@ public class ReadAnArrayFromConsole {
         System.out.println("Enter the elements for your array:");
         double[] initialArray = new double[numberOfElementsInArray];
         for (int i = 0; i < numberOfElementsInArray; i++) {
-            initialArray[i] = scanner.nextInt();
+            initialArray[i] = scanner.nextDouble();
         }
         System.out.println("Your initial array is: ");
-        for (double k : initialArray) {
-            System.out.print(k + "\t");
-        }
+        PrintArrayElements.printDoubleArray(initialArray);
         return initialArray;
     }
-
 }

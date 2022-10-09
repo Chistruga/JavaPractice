@@ -3,13 +3,8 @@ package OOPTask;
 import Utils.FiguresWithSides;
 
 public class Square extends FiguresWithSides {
-    private String name = "OOPTask.Square";
+    private String name = "Square";
     private int sideLength;
-    final int NUMBER_OF_SIDES = 4;
-
-    public int getNumberOfSides() {
-        return NUMBER_OF_SIDES;
-    }
 
     public String getName() {
         return name;
@@ -39,17 +34,17 @@ public class Square extends FiguresWithSides {
     @Override
     public void calculateFigureArea() {
         int area = sideLength * sideLength;
-        System.out.println("OOPTask.Square Area is " + area);
+        System.out.println("Square Area is " + area);
     }
 
     @Override
     public void calculateFigurePerimeter() {
         int perimeter = 2 * sideLength;
-        System.out.println("OOPTask.Square Perimeter is " + perimeter);
+        System.out.println("Square Perimeter is " + perimeter);
     }
 
     @Override
     public void displaySideNumbers() {
-        System.out.println("OOPTask.Square has " + getNumberOfSides() + " sides");
+        System.out.println("Square has " + getNUMBER_OF_SIDES() + " sides");
     }
 }

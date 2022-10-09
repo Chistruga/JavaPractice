@@ -1,5 +1,6 @@
 package JavaExercisesTask;
 
+import Utils.PrintArrayElements;
 import Utils.ReadAnArrayFromConsole;
 
 public class BubbleSort {
@@ -7,7 +8,7 @@ public class BubbleSort {
 
     public void sortElementsInArrayBubbleSort() {
         ReadAnArrayFromConsole readAnArrayFromConsole = new ReadAnArrayFromConsole();
-        int[] initialArray = readAnArrayFromConsole.readIntArrayFromConsole();
+        int[] initialArray = readAnArrayFromConsole.readAndPrintIntArrayFromConsole();
         for (int i = 0; i < readAnArrayFromConsole.getNumberOfElementsInArray(); i++) {
             for (int j = 1; j < (readAnArrayFromConsole.getNumberOfElementsInArray() - i); j++) {
                 if (initialArray[j - 1] > initialArray[j]) {
@@ -19,8 +20,6 @@ public class BubbleSort {
         }
 
         System.out.println("\nArray after Bubble sort: ");
-        for (int k : initialArray) {
-            System.out.print(k + "\t");
-        }
+        PrintArrayElements.printIntArray(initialArray);
     }
 }

@@ -21,7 +21,7 @@ public class MagicalSquare {
         System.out.println("Matrix elements are: ");
         for (int i = 0; i < numberOfRows; i++) {
             for (int j = 0; j < numberOfColumns; j++) {
-                System.out.print(matrix[i][j] + " ");
+                System.out.print("[" + matrix[i][j] + "]" + " ");
             }
             System.out.println();
         }
@@ -41,8 +41,7 @@ public class MagicalSquare {
             diagonalSum2 += matrix[d][matrixDimension - 1 - d];
         }
 
-        if (diagonalSum1 != diagonalSum2)
-            return false;
+        if (diagonalSum1 != diagonalSum2) return false;
 
         for (int i = 0; i < matrixDimension; i++) {
             int rowSum = 0;
@@ -52,8 +51,7 @@ public class MagicalSquare {
                 rowSum += matrix[i][j];
                 colSum += matrix[j][i];
             }
-            if (rowSum != colSum || colSum != diagonalSum1)
-                return false;
+            if (rowSum != colSum || colSum != diagonalSum1) return false;
         }
         return true;
     }

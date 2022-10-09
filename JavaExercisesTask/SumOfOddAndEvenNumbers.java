@@ -8,7 +8,7 @@ public class SumOfOddAndEvenNumbers {
 
     public void findSumOfOddElementsAndTotalNumberOfEvenElements() {
         ReadAnArrayFromConsole readAnArrayFromConsole = new ReadAnArrayFromConsole();
-        int[] initialArray = readAnArrayFromConsole.readIntArrayFromConsole();
+        int[] initialArray = readAnArrayFromConsole.readAndPrintIntArrayFromConsole();
 
         for (int i = 0; i < readAnArrayFromConsole.getNumberOfElementsInArray(); i++) {
             if (initialArray[i] % 2 == 0) {
@@ -17,10 +17,7 @@ public class SumOfOddAndEvenNumbers {
                 sumOfOddElements += initialArray[i];
             }
         }
-
         System.out.println("\nThe Total Even numbers is: " + numberOfEvenElements);
         System.out.println("\nThe Total Sum of Odd numbers is: " + sumOfOddElements);
     }
-
-
 }
