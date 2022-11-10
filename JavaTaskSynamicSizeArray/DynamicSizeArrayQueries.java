@@ -1,5 +1,6 @@
 package JavaTaskSynamicSizeArray;
 
+import Utils.QueryHelper;
 import Utils.ReadDynamicSizeArray;
 
 import java.util.ArrayList;
@@ -14,18 +15,22 @@ public class DynamicSizeArrayQueries {
     public void getElementsOfDynamicArrayUsingQueries() {
         ReadDynamicSizeArray readDynamicSizeArray = new ReadDynamicSizeArray();
         Scanner scanner = new Scanner(System.in);
-        ArrayList[] arrayLists = readDynamicSizeArray.readDynamicArray();
-        System.out.println("Give the number of queries: ");
+        ArrayList<ArrayList<Integer>> arrayList = readDynamicSizeArray.readDynamicArray();
+        ArrayList<QueryHelper<Integer, Integer>> pairList = new ArrayList<QueryHelper<Integer, Integer>>();
+
+        System.out.println("Enter the combinations on X & Y Axis to find the element: ");
         numberOfQueries = scanner.nextInt();
         for (int i = 0; i < numberOfQueries; i++) {
-            System.out.println("Enter the combinations on X & Y Axis to find the element: ");
-            System.out.println("X: ");
-            axisX = scanner.nextInt();
-            System.out.println("Y: ");
-            axisY = scanner.nextInt();
+            System.out.print("X: ");
+            axisX = scanner.nextInt() - 1;
+            System.out.print("Y: ");
+            axisY = scanner.nextInt() - 1;
+            pairList.add(new QueryHelper<>(axisX, axisY));
+        }
 
+        for (QueryHelper<Integer, Integer> ob : pairList) {
             try {
-                System.out.println(arrayLists[axisX - 1].get(axisY - 1));
+                System.out.println(arrayList.get(ob.getKey()).get(ob.getValue()));
             } catch (Exception e) {
                 System.out.println("ERROR!");
             }
