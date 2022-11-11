@@ -1,8 +1,10 @@
 import JavaExercisesTask.*;
+import JavaTaskSynamicSizeArray.DynamicSizeArrayQueries;
 import OOPTask.Circle;
 import OOPTask.Rectangle;
 import OOPTask.Square;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +14,7 @@ public class Main {
         MagicalSquare magicalSquare = new MagicalSquare();
         ReverseArrayOfFloats reverseArrayOfFloats = new ReverseArrayOfFloats();
         SumOfOddAndEvenNumbers sumOfOddAndEvenNumbers = new SumOfOddAndEvenNumbers();
+        DynamicSizeArrayQueries dynamicSizeArrayQueries = new DynamicSizeArrayQueries();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("1. Check if a string of characters is a Palindrome\n" +
@@ -20,7 +23,8 @@ public class Main {
                 "4. Determine sum of odd numbers and the amount of even numbers\n" +
                 "5. Check if two-dimensional matrix is Magic\n" +
                 "6. OOP Task\n" +
-                "7. Exit");
+                "7. Dynamic size Array Task\n" +
+                "8. Exit");
 
         boolean quit = false;
         do {
@@ -66,6 +70,9 @@ public class Main {
                     rectangle.calculateFigurePerimeter();
                     break;
                 case 7:
+                    dynamicSizeArrayQueries.getElementsOfDynamicArrayUsingQueries();
+                    break;
+                case 8:
                     System.out.println("\nEXIT");
                     quit = true;
                     break;
