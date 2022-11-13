@@ -1,3 +1,5 @@
+import JavaCollection.HashMapExample;
+import JavaCollection.HashSetExample;
 import JavaCollection.ListExample;
 import JavaExercisesTask.*;
 import JavaTaskSynamicSizeArray.DynamicSizeArrayQueries;
@@ -5,6 +7,7 @@ import OOPTask.Circle;
 import OOPTask.Rectangle;
 import OOPTask.Square;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -16,6 +19,8 @@ public class Main {
         SumOfOddAndEvenNumbers sumOfOddAndEvenNumbers = new SumOfOddAndEvenNumbers();
         DynamicSizeArrayQueries dynamicSizeArrayQueries = new DynamicSizeArrayQueries();
         ListExample listExample = new ListExample();
+        HashSetExample hashSetExample = new HashSetExample();
+        HashMapExample hashMapExample = new HashMapExample();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("1. Check if a string of characters is a Palindrome\n" +
@@ -75,7 +80,9 @@ public class Main {
                     dynamicSizeArrayQueries.getElementsOfDynamicArrayUsingQueries();
                     break;
                 case 8:
-                    listExample.iterateAndJoinAllElementsOfAString();
+                    listExample.createList();
+                    hashSetExample.createHashSet();
+                    hashMapExample.createHashMap();
                     break;
                 case 9:
                     System.out.println("\nEXIT");

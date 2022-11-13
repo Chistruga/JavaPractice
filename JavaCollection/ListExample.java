@@ -1,11 +1,9 @@
 package JavaCollection;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ListExample {
-    public void iterateAndJoinAllElementsOfAString() {
+    public void createList() {
         List<String> exampleList = new ArrayList<>();
         exampleList.add("One");
         exampleList.add("Two");
@@ -16,18 +14,27 @@ public class ListExample {
         exampleList.add("PleasePrintMe");
         exampleList.add("DoNotPrint");
 
-        System.out.println("List Elements are: ");
         Iterator<String> iterator = exampleList.iterator();
-        while(iterator.hasNext())
-        {
-            System.out.println(iterator.next());
-        }
 
-        System.out.println("Joined List Elements are: ");
-        while(iterator.hasNext())
-        {
+        System.out.print("Joined List Elements are: ");
+        while (iterator.hasNext()) {
             System.out.print(iterator.next());
         }
 
+        System.out.print("\nReversed List Elements:");
+        Collections.reverse(exampleList);
+        for (String listElements : exampleList) {
+            System.out.print(" " + listElements);
+        }
+
+        Collections.reverse(exampleList);
+        System.out.println("\nElement with Index 2 is: " + exampleList.get(2));
+
+        List<String> anotherExampleList = new ArrayList<>();
+        anotherExampleList.add("value1");
+        anotherExampleList.add("value2");
+
+        exampleList.addAll(anotherExampleList);
+        System.out.println("New List is: " + exampleList);
     }
 }
