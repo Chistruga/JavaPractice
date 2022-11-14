@@ -36,5 +36,15 @@ public class ListExample {
 
         exampleList.addAll(anotherExampleList);
         System.out.println("New List is: " + exampleList);
+
+        printList(exampleList);
+    }
+
+    public void printList(List<String> inputList) {
+        System.out.print("List elements displayed using a separate method: ");
+        for (String element : inputList) {
+            if (!element.equals("PleasePrintMe") && !element.equals("DoNotPrint"))
+                System.out.print(" " + element);
+        }
     }
 }

@@ -12,7 +12,7 @@ public class HashSetExample {
             exampleSet.add(i);
         }
 
-        System.out.println("HashSet size is: " + exampleSet.size());
+        System.out.println("\n\nHashSet size is: " + exampleSet.size());
 
         System.out.print("HashSet elements are:");
         Iterator<Integer> iterator = exampleSet.iterator();

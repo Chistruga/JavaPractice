@@ -11,6 +11,7 @@ public class HashMapExample {
         hashMap.put("Third", 3.3);
         hashMap.put("Fourth", false);
 
+        System.out.println();
         for (Map.Entry<String, Object> element : hashMap.entrySet()) {
             System.out.println("Key - " + element.getKey() + "; Value - " + element.getValue());
         }
@@ -28,5 +29,12 @@ public class HashMapExample {
         for (Map.Entry<String, Object> element : hashMap.entrySet()) {
             System.out.println("Key - " + element.getKey() + "; Value - " + element.getValue());
         }
+
+        printMapValues(hashMap);
+    }
+
+    public void printMapValues(Map<?, ?> inputMap) {
+        System.out.println("\nHashMap elements iterated using a separate method: ");
+        inputMap.entrySet().stream().forEach(input -> System.out.println("Key - " + input.getKey() + ", Value - " + input.getValue()));
     }
 }
