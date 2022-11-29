@@ -1,5 +1,6 @@
 package JavaCollection;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,10 +12,12 @@ public class HashMapExample {
         hashMap.put("Third", 3.3);
         hashMap.put("Fourth", false);
 
+        ArrayList<String> keyList = new ArrayList<>(hashMap.keySet());
+        ArrayList<Object> valueList = new ArrayList<>(hashMap.values());
+
         System.out.println();
-        for (Map.Entry<String, Object> element : hashMap.entrySet()) {
-            System.out.println("Key - " + element.getKey() + "; Value - " + element.getValue());
-        }
+        System.out.println("Hash Map Keys are: " + keyList);
+        System.out.println("Hash Map Values are: " + valueList);
 
         Object value = "NotSecond";
         hashMap.put("Second", value);

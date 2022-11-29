@@ -20,10 +20,9 @@ public class HashSetExample {
             System.out.print(" " + iterator.next());
         }
 
-        HashSet<Integer> anotherExampleSet = new HashSet<>();
-        anotherExampleSet.addAll(exampleSet);
-        anotherExampleSet.remove(0);
-        for (Integer element : anotherExampleSet) {
+        exampleSet.remove(0);
+
+        for (Integer element : exampleSet) {
             if (element % 2 == 0) {
                 multipliedEvenSetElements *= element;
             }

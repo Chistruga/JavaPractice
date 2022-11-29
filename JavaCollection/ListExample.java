@@ -28,7 +28,7 @@ public class ListExample {
         }
 
         Collections.reverse(exampleList);
-        System.out.println("\nElement with Index 2 is: " + exampleList.get(2));
+        System.out.println("\nElement Two has index: " + exampleList.indexOf("Two"));
 
         List<String> anotherExampleList = new ArrayList<>();
         anotherExampleList.add("value1");
