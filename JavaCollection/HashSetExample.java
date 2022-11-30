@@ -20,10 +20,11 @@ public class HashSetExample {
             System.out.print(" " + iterator.next());
         }
 
-        exampleSet.remove(0);
-
         for (Integer element : exampleSet) {
             if (element % 2 == 0) {
+                if (element == 0) {
+                    continue;
+                }
                 multipliedEvenSetElements *= element;
             }
         }
