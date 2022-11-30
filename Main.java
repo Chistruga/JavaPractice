@@ -1,10 +1,13 @@
+import JavaCollection.HashMapExample;
+import JavaCollection.HashSetExample;
+import JavaCollection.ListExample;
 import JavaExercisesTask.*;
 import JavaTaskSynamicSizeArray.DynamicSizeArrayQueries;
 import OOPTask.Circle;
 import OOPTask.Rectangle;
 import OOPTask.Square;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -15,6 +18,9 @@ public class Main {
         ReverseArrayOfFloats reverseArrayOfFloats = new ReverseArrayOfFloats();
         SumOfOddAndEvenNumbers sumOfOddAndEvenNumbers = new SumOfOddAndEvenNumbers();
         DynamicSizeArrayQueries dynamicSizeArrayQueries = new DynamicSizeArrayQueries();
+        ListExample listExample = new ListExample();
+        HashSetExample hashSetExample = new HashSetExample();
+        HashMapExample hashMapExample = new HashMapExample();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("1. Check if a string of characters is a Palindrome\n" +
@@ -24,7 +30,8 @@ public class Main {
                 "5. Check if two-dimensional matrix is Magic\n" +
                 "6. OOP Task\n" +
                 "7. Dynamic size Array Task\n" +
-                "8. Exit");
+                "8. Collection Task\n" +
+                "9. Exit");
 
         boolean quit = false;
         do {
@@ -73,11 +80,16 @@ public class Main {
                     dynamicSizeArrayQueries.getElementsOfDynamicArrayUsingQueries();
                     break;
                 case 8:
+                    listExample.createList();
+                    hashSetExample.createHashSet();
+                    hashMapExample.createHashMap();
+                    break;
+                case 9:
                     System.out.println("\nEXIT");
                     quit = true;
                     break;
                 default:
-                    System.out.println("Please enter a number from 1 to 6");
+                    System.out.println("Please enter a number from 1 to 9");
             }
         }
         while (!quit);
