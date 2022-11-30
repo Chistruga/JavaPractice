@@ -21,10 +21,7 @@ public class HashSetExample {
         }
 
         for (Integer element : exampleSet) {
-            if (element % 2 == 0) {
-                if (element == 0) {
-                    continue;
-                }
+            if (element % 2 == 0 && element != 0) {
                 multipliedEvenSetElements *= element;
             }
         }
