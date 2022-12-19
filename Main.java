@@ -1,3 +1,4 @@
+import JavaCollection.BookExample;
 import JavaCollection.HashMapExample;
 import JavaCollection.HashSetExample;
 import JavaCollection.ListExample;
@@ -7,7 +8,6 @@ import OOPTask.Circle;
 import OOPTask.Rectangle;
 import OOPTask.Square;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -21,6 +21,7 @@ public class Main {
         ListExample listExample = new ListExample();
         HashSetExample hashSetExample = new HashSetExample();
         HashMapExample hashMapExample = new HashMapExample();
+        BookExample bookExample = new BookExample();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("1. Check if a string of characters is a Palindrome\n" +
@@ -31,7 +32,8 @@ public class Main {
                 "6. OOP Task\n" +
                 "7. Dynamic size Array Task\n" +
                 "8. Collection Task\n" +
-                "9. Exit");
+                "9. List of 20 randomly alphanumeric strings and Book Task\n" +
+                "10. Exit");
 
         boolean quit = false;
         do {
@@ -85,11 +87,14 @@ public class Main {
                     hashMapExample.createHashMap();
                     break;
                 case 9:
+                    bookExample.BookExample();
+                    break;
+                case 10:
                     System.out.println("\nEXIT");
                     quit = true;
                     break;
                 default:
-                    System.out.println("Please enter a number from 1 to 9");
+                    System.out.println("Please enter a number from 1 to 10");
             }
         }
         while (!quit);

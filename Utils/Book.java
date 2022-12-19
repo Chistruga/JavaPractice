@@ -3,12 +3,12 @@ package Utils;
 public class Book {
     private String title;
     private String author;
-    private int numberOfPages;
+    private String numberOfPages;
     private String publisher;
     private String language;
     private String bookType;
 
-    public Book(String title, String author, int numberOfPages, String publisher, String language, String bookType) {
+    public Book(String title, String author, String numberOfPages, String publisher, String language, String bookType) {
         this.title = title;
         this.author = author;
         this.numberOfPages = numberOfPages;
@@ -33,11 +33,11 @@ public class Book {
         this.author = author;
     }
 
-    public int getNumberOfPages() {
+    public String getNumberOfPages() {
         return numberOfPages;
     }
 
-    public void setNumberOfPages(int numberOfPages) {
+    public void setNumberOfPages(String numberOfPages) {
         this.numberOfPages = numberOfPages;
     }
 
