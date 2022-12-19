@@ -1,4 +1,4 @@
-package JavaCollection;
+package ListAndBookTask;
 
 import Utils.Book;
 

@@ -1,9 +1,10 @@
-import JavaCollection.BookExample;
+import ListAndBookTask.BookExample;
 import JavaCollection.HashMapExample;
 import JavaCollection.HashSetExample;
 import JavaCollection.ListExample;
 import JavaExercisesTask.*;
 import JavaTaskSynamicSizeArray.DynamicSizeArrayQueries;
+import ListAndBookTask.ListOfRandomlyGeneratedAlphanumericStrings;
 import OOPTask.Circle;
 import OOPTask.Rectangle;
 import OOPTask.Square;
@@ -21,6 +22,7 @@ public class Main {
         ListExample listExample = new ListExample();
         HashSetExample hashSetExample = new HashSetExample();
         HashMapExample hashMapExample = new HashMapExample();
+        ListOfRandomlyGeneratedAlphanumericStrings list = new ListOfRandomlyGeneratedAlphanumericStrings();
         BookExample bookExample = new BookExample();
         Scanner scanner = new Scanner(System.in);
 
@@ -87,6 +89,7 @@ public class Main {
                     hashMapExample.createHashMap();
                     break;
                 case 9:
+                    list.performActionsOnGeneratedString();
                     bookExample.BookExample();
                     break;
                 case 10:
