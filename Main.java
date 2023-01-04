@@ -1,4 +1,4 @@
-import ListAndBookTask.BookExample;
+import ListAndBookTask.BookTasks;
 import JavaCollection.HashMapExample;
 import JavaCollection.HashSetExample;
 import JavaCollection.ListExample;
@@ -23,7 +23,7 @@ public class Main {
         HashSetExample hashSetExample = new HashSetExample();
         HashMapExample hashMapExample = new HashMapExample();
         ListOfRandomlyGeneratedAlphanumericStrings list = new ListOfRandomlyGeneratedAlphanumericStrings();
-        BookExample bookExample = new BookExample();
+        BookTasks bookExample = new BookTasks();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("1. Check if a string of characters is a Palindrome\n" +

@@ -2,6 +2,10 @@ package Utils;
 
 public class GenerateRandomAlphanumericString {
     public String generateRandomAlphanumericString(int size) {
+        if(size < 0){
+            throw new IllegalArgumentException("Size can contain only positive numbers!");
+        }
+
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 + "0123456789"
                 + "abcdefghijklmnopqrstuvxyz";
