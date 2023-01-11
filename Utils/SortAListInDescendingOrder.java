@@ -1,20 +1,18 @@
 package Utils;
 
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class SortAListInDescendingOrder<T extends Comparable<T>> {
-    public void sortInDescendingOrder(List<T> listToSortInDescendingOrder) {
+public class SortAListInDescendingOrder {
+    public void sortInDescendingOrder(List<String> listToSortInDescendingOrder) {
         try {
-            List sortedListInDescendingOrder = listToSortInDescendingOrder.stream()
-                    .sorted(Comparator.reverseOrder())
-                    .collect(Collectors.toList());
-            System.out.println("Before Sorting: " + listToSortInDescendingOrder);
-            System.out.println("After Sorting: " + sortedListInDescendingOrder);
-        } catch (NullPointerException e) {
-            System.out.println(e);
-        }
+            List sortedListInDescendingOrder = listToSortInDescendingOrder;
+            Collections.sort(sortedListInDescendingOrder, String.CASE_INSENSITIVE_ORDER);
+            Collections.reverse(sortedListInDescendingOrder);
+            System.out.println("Descending sorted list: " + sortedListInDescendingOrder);
 
+        } catch (NullPointerException e) {
+            e.getMessage();
+        }
     }
 }

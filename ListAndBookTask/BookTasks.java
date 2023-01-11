@@ -6,9 +6,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class BookTasks {
-
-    public Comparator<Map<String, String>> mapComparator = (m1, m2) -> m1.get("author").compareTo(m2.get("author"));
-
+    public Comparator<Map<String, String>> mapComparator = Comparator.comparing(m -> m.get("author"));
     public void BookExample() {
         ListOfBooks list = new ListOfBooks();
 
@@ -18,9 +16,9 @@ public class BookTasks {
 
         System.out.println("First Spanish Book from the list: \n" + spanishBook);
 
-        Collections.sort(list.getBooks(), mapComparator);
-
-        System.out.println("List of books sorted in ascending order: \n" + list.getBooks());
+        List<Map<String, String>> sortedListByAuthor = list.getBooks();
+        Collections.sort(sortedListByAuthor, mapComparator);
+        System.out.println("List of books sorted in ascending order: \n" + sortedListByAuthor);
 
         Optional<Map<String, String>> maxPageValue = list.getBooks().stream()
                 .max(Comparator.comparing((Map<String, String> m) -> m.get("numberOfPages")));
