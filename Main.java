@@ -1,3 +1,4 @@
+import DBTask.DataBaseTask;
 import ListAndBookTask.BookTasks;
 import JavaCollection.HashMapExample;
 import JavaCollection.HashSetExample;
@@ -9,10 +10,11 @@ import OOPTask.Circle;
 import OOPTask.Rectangle;
 import OOPTask.Square;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         CheckPalindrome checkPalindrome = new CheckPalindrome();
         BubbleSort bubbleSort = new BubbleSort();
         MagicalSquare magicalSquare = new MagicalSquare();
@@ -25,6 +27,8 @@ public class Main {
         ListOfRandomlyGeneratedAlphanumericStrings list = new ListOfRandomlyGeneratedAlphanumericStrings();
         BookTasks bookExample = new BookTasks();
         Scanner scanner = new Scanner(System.in);
+        DataBaseTask dataBaseTask = new DataBaseTask();
+
 
         System.out.println("1. Check if a string of characters is a Palindrome\n" +
                 "2. Inverse the elements of an array\n" +
@@ -35,7 +39,8 @@ public class Main {
                 "7. Dynamic size Array Task\n" +
                 "8. Collection Task\n" +
                 "9. List of 20 randomly alphanumeric strings and Book Task\n" +
-                "10. Exit");
+                "10. Data Base Connection Task\n" +
+                "11. Exit");
 
         boolean quit = false;
         do {
@@ -93,11 +98,15 @@ public class Main {
                     bookExample.BookExample();
                     break;
                 case 10:
+                    dataBaseTask.writeWordCountInAnotherTable("Word1");
+                    dataBaseTask.extractDBResultInAMap();
+                    break;
+                case 11:
                     System.out.println("\nEXIT");
                     quit = true;
                     break;
                 default:
-                    System.out.println("Please enter a number from 1 to 10");
+                    System.out.println("Please enter a number from 1 to 11");
             }
         }
         while (!quit);
