@@ -1,4 +1,5 @@
 import DBTask.DataBaseTask;
+import DBTask.ReadFileContent;
 import ListAndBookTask.BookTasks;
 import JavaCollection.HashMapExample;
 import JavaCollection.HashSetExample;
@@ -10,11 +11,13 @@ import OOPTask.Circle;
 import OOPTask.Rectangle;
 import OOPTask.Square;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, IOException {
         CheckPalindrome checkPalindrome = new CheckPalindrome();
         BubbleSort bubbleSort = new BubbleSort();
         MagicalSquare magicalSquare = new MagicalSquare();
@@ -28,6 +31,7 @@ public class Main {
         BookTasks bookExample = new BookTasks();
         Scanner scanner = new Scanner(System.in);
         DataBaseTask dataBaseTask = new DataBaseTask();
+        ReadFileContent readFileContent = new ReadFileContent();
 
 
         System.out.println("1. Check if a string of characters is a Palindrome\n" +
@@ -100,6 +104,8 @@ public class Main {
                 case 10:
                     dataBaseTask.writeWordCountInAnotherTable("Word1");
                     dataBaseTask.extractDBResultInAMap();
+                    readFileContent.writeToFile("Word3", new File("input.txt"));
+                    readFileContent.extractResultsInAMap();
                     break;
                 case 11:
                     System.out.println("\nEXIT");
