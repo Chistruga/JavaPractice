@@ -1,5 +1,8 @@
 package DBTask;
 
+import Utils.ReadPropertyFile;
+
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,8 +24,19 @@ public class DataBaseTask {
     ResultSet resultSet;
     PreparedStatement preparedStatement;
 
+    String dataBaseName;
+
+    {
+        try {
+            dataBaseName = ReadPropertyFile.readPropertyFile("Properties/dbconnection.properties", "dataBaseName");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public int countWordInTable(String word) throws SQLException {
-        resultSet = statement.executeQuery("select count(WORD) as counts from WordList where WORD ='" + word + "'");
+        resultSet = statement.executeQuery("select count(WORD) as counts from " + dataBaseName + ".dbo.WordList where WORD ='" + word + "'");
         int wordCount = 0;
         while (resultSet.next()) {
             wordCount = Integer.parseInt(resultSet.getString("counts"));
@@ -33,7 +47,7 @@ public class DataBaseTask {
 
     public void writeWordCountInAnotherTable(String word) throws SQLException {
         int countWordAppearance = countWordInTable(word);
-        String insertIntoSecondTable = "insert into WordCount values ('" + word + " was found " + countWordAppearance + " times')";
+        String insertIntoSecondTable = "insert into " + dataBaseName + ".dbo.WordCount values ('" + word + " was found " + countWordAppearance + " times')";
         statement.execute(insertIntoSecondTable);
         System.out.println(word + " was found " + countWordAppearance + " times!");
         System.out.println("Below message is successfully inserted in another table!");
@@ -41,7 +55,7 @@ public class DataBaseTask {
 
     public void extractDBResultInAMap() throws SQLException {
         Map<String, List<Long>> map = new HashMap<String, List<Long>>();
-        String sql = "select * from WordList";
+        String sql = "select * from " + dataBaseName + ".dbo.WordList";
         preparedStatement = con.prepareStatement(sql);
         resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {

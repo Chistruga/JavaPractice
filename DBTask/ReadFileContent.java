@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public class ReadFileContent {
-    public static String inputFile = "input.txt";
-    public static String resultsFile = "results.txt";
+    public String inputFile = "input.txt";
+    public String resultsFile = "results.txt";
 
     public int countWordInFile(String wordToBeSearched) throws IOException {
         File file = new File(inputFile);
@@ -34,7 +34,7 @@ public class ReadFileContent {
         FileWriter fWriter = new FileWriter(resultsFile);
         fWriter.write(toBeWrittenInTxtFile);
         fWriter.close();
-        System.out.println("File is created successfully with the content.");
+        System.out.println("\n\nFile is created successfully with the content.");
     }
 
     public void extractResultsInAMap() throws IOException {
@@ -47,14 +47,14 @@ public class ReadFileContent {
         while ((line = br.readLine()) != null) {
             lineNumber++;
             if (!map.containsKey(line)) {
-                map.put(line, new ArrayList<Long>());
+                map.put(line, new ArrayList<>());
             }
             map.get(line).add(lineNumber);
         }
         br.close();
 
         for (Map.Entry<String, List<Long>> element : map.entrySet()) {
-            System.out.println("Word " + element.getKey() + " was found " + countWordInFile(element.getKey()) + " times on lines: " + element.getValue());
+            System.out.println("Word " + element.getKey() + " was found " + element.getValue().size() + " times on lines: " + element.getValue());
         }
 
     }

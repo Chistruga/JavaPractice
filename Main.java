@@ -1,3 +1,4 @@
+import DBTask.CreateDBTable;
 import DBTask.DataBaseTask;
 import DBTask.ReadFileContent;
 import ListAndBookTask.BookTasks;
@@ -32,7 +33,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         DataBaseTask dataBaseTask = new DataBaseTask();
         ReadFileContent readFileContent = new ReadFileContent();
-
+        CreateDBTable createDBTable = new CreateDBTable();
 
         System.out.println("1. Check if a string of characters is a Palindrome\n" +
                 "2. Inverse the elements of an array\n" +
@@ -102,9 +103,10 @@ public class Main {
                     bookExample.BookExample();
                     break;
                 case 10:
+                    createDBTable.checkAndCreateDBWithTablesAndData();
                     dataBaseTask.writeWordCountInAnotherTable("Word1");
                     dataBaseTask.extractDBResultInAMap();
-                    readFileContent.writeToFile("Word3", new File("input.txt"));
+                    readFileContent.writeToFile("Word1", new File("input.txt"));
                     readFileContent.extractResultsInAMap();
                     break;
                 case 11:
